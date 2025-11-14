@@ -20,7 +20,14 @@ def safe_path_for_project(path: str) -> pathlib.Path:
 
 @tool
 def write_file(path: str, content: str) -> str:
-    """Writes content to a file at the specified path within the project root."""
+    """Writes content to a file at the specified path within the project root.
+    
+    Reminder: The @tool decorator from langchain.tools wraps this function,
+    adds metadata, and makes it available to the LLM as a callable tool.
+    e.g. AI agent can now call write_file as a tool:
+    
+    {"tool", "write_file", "arguments": {"path": "str", "content": "str"}}
+    """
     p = safe_path_for_project(path)
     p.parent.mkdir(parents=True, exist_ok=True)
     with open(p, "w", encoding="utf-8") as f:
