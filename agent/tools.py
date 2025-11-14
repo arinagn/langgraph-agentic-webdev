@@ -21,11 +21,11 @@ def safe_path_for_project(path: str) -> pathlib.Path:
 @tool
 def write_file(path: str, content: str) -> str:
     """Writes content to a file at the specified path within the project root.
-    
+
     Reminder: The @tool decorator from langchain.tools wraps this function,
     adds metadata, and makes it available to the LLM as a callable tool.
     e.g. AI agent can now call write_file as a tool:
-    
+
     {"tool", "write_file", "arguments": {"path": "str", "content": "str"}}
     """
     p = safe_path_for_project(path)
@@ -33,3 +33,13 @@ def write_file(path: str, content: str) -> str:
     with open(p, "w", encoding="utf-8") as f:
         f.write(content)
     return f"WROTE:{p}"
+
+
+@tool
+def read_file(path: str) -> str:
+    """Reads content from a file at the specified path within the project root."""
+    p = safe_path_for_project(path)
+    if not p.exists():
+        return ""
+    with open(p, "r", encoding="utf-8") as f:
+        return f.read()
