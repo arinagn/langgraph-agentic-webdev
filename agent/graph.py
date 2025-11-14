@@ -43,7 +43,10 @@ def architect_agent(state: dict) -> dict:
 
 
 def coder_agent(state: dict) -> dict:
-    """LangGraph tool-using coder agent."""
+    """Generates CoderState for each filepath in TaskPlan.
+    
+    Makes calls to LangGraph tools defined in tools.py.
+    """
     coder_state: CoderState = state.get("coder_state")
     if coder_state is None:
         coder_state = CoderState(task_plan=state["task_plan"], current_step_idx=0)
