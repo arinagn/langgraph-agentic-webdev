@@ -43,3 +43,19 @@ def read_file(path: str) -> str:
         return ""
     with open(p, "r", encoding="utf-8") as f:
         return f.read()
+
+
+@tool
+def get_current_directory() -> str:
+    """Returns the current working directory."""
+    return str(PROJECT_ROOT)
+
+
+@tool
+def list_files(directory: str = ".") -> str:
+    """Lists all files in the specified directory within the project root."""
+    p = safe_path_for_project(directory)
+    if not p.is_dir():
+        return f"ERROR: {p} is not a directory"
+    files = [str(f.relative_to(PROJECT_ROOT)) for f in p.glob("**/*") if f.is_file()]
+    return "\n".join(files) if files else "No files found."
