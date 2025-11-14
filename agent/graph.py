@@ -56,4 +56,7 @@ if __name__ == "__main__":
     # .invoke() becomes the initial global state, which LangGraph
     # automatically updates with the partial dict created by
     # each subsequent node / agent.
+
+    # State is always the cumulative merge of all partial dicts 
+    # returned by nodes, starting from whatever dict you pass to .invoke().
     print(result)
