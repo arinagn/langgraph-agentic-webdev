@@ -20,7 +20,7 @@ Uses the LangGraph framework to build a small multi‑agent web app builder. Run
 
 If no `--prompt` is provided, main.py may have a default prompt or interactive prompt flow (see the `main.py` file for details).
 
-## LangGraph — concise (80/20)
+## A Quick Note on LangGraph
 
 - LangGraph models multi-step agent workflows as a directed graph:
   - Nodes: agents/tools that transform or produce data (e.g., "Plan UI", "Generate HTML", "Write files").
