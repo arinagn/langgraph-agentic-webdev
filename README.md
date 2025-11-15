@@ -1,6 +1,8 @@
 # langgraph-agentic-webdev
 
-Uses the LangGraph framework to build a small multi‑agent web app builder. Running main.py creates a self-contained web project (output in `generated_project`) from a natural language prompt, e.g., the included `generated_project` was produced by running main.py with the prompt "Create a simple calculator web app."
+Uses the LangGraph framework to build a simple multi‑agent web app builder.
+
+Running main.py creates a self-contained web project (output in `generated_project`) from a natural language prompt, e.g., the included `generated_project` was produced by running main.py with the prompt "Create a simple calculator web app."
 
 ## What this repo builds (80/20 rule)
 
