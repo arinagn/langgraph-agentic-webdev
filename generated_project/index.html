@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleCalc</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="calculator">
+        <div id="display" class="display" aria-live="polite">0</div>
+        <div class="buttons">
+            <!-- Row 1 -->
+            <button id="clear" data-action="clear">C</button>
+            <button id="backspace" data-action="backspace">←</button>
+            <button id="divide" data-action="divide">/</button>
+            <button id="multiply" data-action="multiply">*</button>
+            <!-- Row 2 -->
+            <button id="seven" data-action="digit" data-value="7">7</button>
+            <button id="eight" data-action="digit" data-value="8">8</button>
+            <button id="nine" data-action="digit" data-value="9">9</button>
+            <button id="subtract" data-action="subtract">-</button>
+            <!-- Row 3 -->
+            <button id="four" data-action="digit" data-value="4">4</button>
+            <button id="five" data-action="digit" data-value="5">5</button>
+            <button id="six" data-action="digit" data-value="6">6</button>
+            <button id="add" data-action="add">+</button>
+            <!-- Row 4 -->
+            <button id="one" data-action="digit" data-value="1">1</button>
+            <button id="two" data-action="digit" data-value="2">2</button>
+            <button id="three" data-action="digit" data-value="3">3</button>
+            <button id="equals" data-action="equals">=</button>
+            <!-- Row 5 -->
+            <button id="zero" data-action="digit" data-value="0">0</button>
+            <button id="decimal" data-action="decimal">.</button>
+        </div>
+    </div>
+</body>
+</html>
